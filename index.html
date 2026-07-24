@@ -12,9 +12,9 @@
             --accent-gold: #e5c158;
             --accent-gold-glow: rgba(229, 193, 88, 0.35);
             --text-main: #f8f4eb;
-            --text-muted: #b5ac9e;
-            --glass-card: rgba(18, 14, 13, 0.86);
-            --glass-border: rgba(229, 193, 88, 0.28);
+            --text-muted: #c9c0b1;
+            --glass-card: rgba(14, 11, 10, 0.82);
+            --glass-border: rgba(229, 193, 88, 0.32);
         }
 
         * {
@@ -32,7 +32,7 @@
             position: relative;
         }
 
-        /* GUARANTEED CROSS-PLATFORM FIREPLACE BACKGROUND */
+        /* CRISP CLEAR FIREPLACE BACKGROUND */
         .bg-fixed-layer {
             position: fixed;
             top: 0;
@@ -50,9 +50,9 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: rgba(8, 6, 6, 0.72);
-            backdrop-filter: blur(6px);
-            -webkit-backdrop-filter: blur(6px);
+            background: rgba(8, 6, 6, 0.48);
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
             z-index: -1;
             pointer-events: none;
         }
@@ -149,7 +149,7 @@
             display: inline-flex;
             align-items: center;
             padding: 8px 18px;
-            background: rgba(229, 193, 88, 0.12);
+            background: rgba(229, 193, 88, 0.15);
             border: 1px solid var(--accent-gold);
             border-radius: 50px;
             color: var(--accent-gold);
@@ -165,6 +165,7 @@
             font-weight: 700;
             line-height: 1.1;
             margin-bottom: 25px;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
         }
 
         .hero-title strong {
@@ -175,10 +176,11 @@
 
         .hero-subtitle {
             font-size: 19px;
-            color: var(--text-muted);
+            color: var(--text-main);
             margin-bottom: 40px;
             max-width: 540px;
-            font-weight: 300;
+            font-weight: 400;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
         }
 
         .hero-buttons {
@@ -196,10 +198,11 @@
             text-decoration: none;
             transition: 0.3s ease;
             white-space: nowrap;
+            background: rgba(14, 11, 10, 0.6);
         }
 
         .btn-menu:hover {
-            background: rgba(229, 193, 88, 0.15);
+            background: rgba(229, 193, 88, 0.2);
         }
 
         /* STUB CARDS */
@@ -215,7 +218,7 @@
             align-items: center;
             text-align: center;
             box-shadow: 0 35px 70px rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(8px);
         }
 
         .stub-label {
@@ -251,17 +254,19 @@
             font-size: 50px;
             margin-bottom: 15px;
             color: var(--accent-gold);
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
         }
 
         .section-desc {
             text-align: center;
-            color: var(--text-muted);
+            color: var(--text-main);
             margin-bottom: 60px;
             font-size: 19px;
             max-width: 750px;
             margin-left: auto;
             margin-right: auto;
-            font-weight: 300;
+            font-weight: 400;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
         }
 
         /* ABOUT SECTION */
@@ -270,7 +275,7 @@
             border: 1px solid var(--glass-border);
             border-radius: 28px;
             padding: 50px;
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(8px);
             display: grid;
             grid-template-columns: 0.9fr 1.1fr;
             gap: 50px;
@@ -299,12 +304,13 @@
         }
 
         .menu-card-interactive {
-            background: transparent;
-            border: none;
+            background: rgba(14, 11, 10, 0.7);
+            border: 1px solid var(--glass-border);
             border-radius: 24px;
             overflow: hidden;
             cursor: pointer;
             transition: 0.4s ease;
+            padding: 12px;
         }
 
         .menu-card-interactive:hover {
@@ -315,7 +321,7 @@
             position: relative;
             height: 220px;
             overflow: hidden;
-            border-radius: 20px;
+            border-radius: 18px;
             border: 1px solid var(--glass-border);
         }
 
@@ -331,8 +337,7 @@
         }
 
         .menu-card-body-transparent {
-            padding: 20px 5px 0;
-            background: transparent !important;
+            padding: 18px 8px 8px;
         }
 
         .menu-card-body-transparent h3 {
@@ -354,7 +359,7 @@
             border: 1px solid var(--glass-border);
             border-radius: 28px;
             padding: 40px 50px;
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(8px);
             margin-top: 30px;
             display: none;
             animation: fadeInDown 0.5s ease;
@@ -594,7 +599,14 @@
             }
         }
 
+        /* 📱 MOBILE SPECIFIC SHARPNESS ADJUSTMENT */
         @media (max-width: 680px) {
+            .bg-overlay-layer {
+                background: rgba(8, 6, 6, 0.42);
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+            }
+
             header {
                 flex-direction: column;
                 padding: 12px 15px 15px;
