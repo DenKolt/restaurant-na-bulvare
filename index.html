@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ресторан «На Бульваре» — Эстетика Домашнего Уюта в Мариуполе</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent-gold: #e5c158;
+            --accent-gold-glow: rgba(229, 193, 88, 0.35);
+            --text-main: #f8f4eb;
+            --text-muted: #b5ac9e;
+            --glass-card: rgba(18, 14, 13, 0.86);
+            --glass-border: rgba(229, 193, 88, 0.28);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: #090707 url("C:\\Users\\Denver\\.gemini\\antigravity\\brain\\2c118987-a44d-4f52-8ec9-4e641ab59f9d\\assets/restaurant/restaurant_fireplace_bg.jpg") center/cover fixed no-repeat;
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(8, 6, 6, 0.74);
+            backdrop-filter: blur(8px);
+            z-index: -1;
+        }
+
+        /* HEADER / NAVBAR */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 18px 6% 18px 145px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(9, 7, 7, 0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 1000;
+        }
+
+        .logo-link {
+            position: absolute;
+            top: 8px;
+            left: 6%;
+            z-index: 1100;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 110px;
+            width: 110px;
+            border-radius: 50%;
+            border: 3px solid var(--accent-gold);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.95), 0 0 25px var(--accent-gold-glow);
+            object-fit: cover;
+            background: #0e0b0a;
+            transition: 0.35s ease;
+        }
+
+        .logo-img:hover {
+            transform: scale(1.08);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.95), 0 0 35px rgba(229, 193, 88, 0.75);
+        }
+
+        nav {
+            display: flex;
+            gap: 35px;
+        }
+
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-gold);
+        }
+
+        .btn-reserve-trigger {
+            background: linear-gradient(135deg, #e5c158, #b88f26);
+            color: #000;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 1px;
+            box-shadow: 0 0 25px var(--accent-gold-glow);
+            transition: 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .btn-reserve-trigger:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 35px rgba(229, 193, 88, 0.6);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 100vh;
+            padding: 150px 6% 90px;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 18px;
+            background: rgba(229, 193, 88, 0.12);
+            border: 1px solid var(--accent-gold);
+            border-radius: 50px;
+            color: var(--accent-gold);
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 66px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        .hero-title strong {
+            background: linear-gradient(135deg, #ffffff, var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 19px;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 540px;
+            font-weight: 300;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .btn-menu {
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .btn-menu:hover {
+            background: rgba(229, 193, 88, 0.15);
+        }
+
+        /* STUB CARDS */
+        .stub-placeholder-card {
+            background: var(--glass-card);
+            border: 2px dashed var(--accent-gold);
+            border-radius: 28px;
+            padding: 40px 30px;
+            height: 440px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 35px 70px rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+        }
+
+        .stub-label {
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            margin-bottom: 12px;
+        }
+
+        .stub-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 34px;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+        }
+
+        .stub-text {
+            font-size: 16px;
+            color: var(--text-muted);
+            max-width: 380px;
+            line-height: 1.6;
+        }
+
+        /* SECTIONS COMMON */
+        section {
+            padding: 90px 6%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 50px;
+            margin-bottom: 15px;
+            color: var(--accent-gold);
+        }
+
+        .section-desc {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 60px;
+            font-size: 19px;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+        }
+
+        /* ABOUT SECTION */
+        .about-card {
+            background: var(--glass-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 28px;
+            padding: 50px;
+            backdrop-filter: blur(12px);
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 38px;
+            color: var(--text-main);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        /* MENU OVERVIEW GRID */
+        .menu-overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-card-interactive {
+            background: transparent;
+            border: none;
+            border-radius: 24px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: 0.4s ease;
+        }
+
+        .menu-card-interactive:hover {
+            transform: translateY(-8px);
+        }
+
+        .menu-card-img-wrap {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .menu-card-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s ease;
+        }
+
+        .menu-card-interactive:hover .menu-card-img-wrap img {
+            transform: scale(1.08);
+        }
+
+        .menu-card-body-transparent {
+            padding: 20px 5px 0;
+            background: transparent !important;
+        }
+
+        .menu-card-body-transparent h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            color: var(--accent-gold);
+            margin-bottom: 8px;
+        }
+
+        .menu-card-body-transparent p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        /* EXPANDABLE MENU BLOCKS */
+        .expandable-menu-block {
+            background: var(--glass-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 28px;
+            padding: 40px 50px;
+            backdrop-filter: blur(12px);
+            margin-top: 30px;
+            display: none;
+            animation: fadeInDown 0.5s ease;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .menu-block-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        .menu-block-header h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 34px;
+            color: var(--accent-gold);
+        }
+
+        .btn-close-block {
+            background: transparent;
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .btn-close-block:hover {
+            background: var(--accent-gold);
+            color: #000;
+        }
+
+        .menu-block-photos-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .menu-block-photos-3 img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 16px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .menu-list-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .menu-item-line {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 12px;
+        }
+
+        .menu-item-name {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .menu-item-dots {
+            flex-grow: 1;
+            border-bottom: 1px dotted rgba(229, 193, 88, 0.3);
+            margin: 0 12px;
+        }
+
+        .menu-item-price {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--accent-gold);
+        }
+
+        .menu-item-subtext {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: -8px;
+            margin-bottom: 14px;
+        }
+
+        /* GALLERY: 5 COLUMNS DESKTOP */
+        .gallery-grid-2x5 {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item-5 {
+            background: transparent;
+            border: none;
+            border-radius: 18px;
+            overflow: hidden;
+            transition: 0.4s ease;
+        }
+
+        .gallery-item-5:hover {
+            transform: translateY(-6px);
+        }
+
+        .gallery-item-5 img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            border-radius: 16px;
+            display: block;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+        }
+
+        /* BOOKING MODAL */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.88);
+            backdrop-filter: blur(12px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            padding: 20px;
+        }
+
+        .modal-card {
+            background: #141110;
+            border: 1px solid var(--accent-gold);
+            border-radius: 28px;
+            padding: 40px 25px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 0 60px rgba(229, 193, 88, 0.3);
+        }
+
+        .modal-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 30px;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+        }
+
+        .modal-text {
+            font-size: 15px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .btn-modal-close {
+            background: var(--accent-gold);
+            color: #000;
+            border: none;
+            padding: 12px 34px;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        footer {
+            padding: 40px 6%;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+            color: var(--text-muted);
+            font-size: 14px;
+            background: rgba(9, 7, 7, 0.95);
+        }
+
+        /* ====================================================
+           📱 MOBILE RESPONSIVE MEDIA QUERIES (TABLETS & PHONES)
+           ==================================================== */
+        @media (max-width: 992px) {
+            header {
+                padding: 15px 4% 15px 100px;
+            }
+
+            .logo-link {
+                top: 6px;
+                left: 4%;
+            }
+
+            .logo-img {
+                height: 80px;
+                width: 80px;
+            }
+
+            nav {
+                gap: 20px;
+            }
+
+            nav a {
+                font-size: 14px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding-top: 130px;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .hero-title {
+                font-size: 46px;
+            }
+
+            .hero-subtitle {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .about-card {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 30px 25px;
+            }
+
+            .gallery-grid-2x5 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 680px) {
+            header {
+                flex-direction: column;
+                padding: 12px 15px 15px;
+                gap: 12px;
+                position: relative;
+                backdrop-filter: blur(20px);
+            }
+
+            .logo-link {
+                position: relative;
+                top: 0;
+                left: 0;
+                margin-bottom: 5px;
+            }
+
+            .logo-img {
+                height: 85px;
+                width: 85px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
+            .btn-reserve-trigger {
+                padding: 10px 22px;
+                font-size: 12px;
+                width: 100%;
+                max-width: 280px;
+            }
+
+            .hero {
+                padding: 40px 4% 60px;
+                min-height: auto;
+            }
+
+            .hero-title {
+                font-size: 34px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .hero-buttons .btn-reserve-trigger,
+            .hero-buttons .btn-menu {
+                width: 100%;
+                text-align: center;
+            }
+
+            .stub-placeholder-card {
+                height: 320px;
+                padding: 25px 18px;
+            }
+
+            .stub-title {
+                font-size: 26px;
+            }
+
+            section {
+                padding: 60px 4%;
+            }
+
+            .section-title {
+                font-size: 34px;
+            }
+
+            .section-desc {
+                font-size: 16px;
+                margin-bottom: 40px;
+            }
+
+            .expandable-menu-block {
+                padding: 25px 18px;
+            }
+
+            .menu-block-header h3 {
+                font-size: 24px;
+            }
+
+            .menu-block-photos-3 {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .menu-block-photos-3 img {
+                height: 160px;
+            }
+
+            .menu-list-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .menu-item-name {
+                font-size: 14px;
+            }
+
+            .menu-item-price {
+                font-size: 17px;
+            }
+
+            /* GALLERY ON PHONES: 2 COLUMNS X 5 ROWS PERFECT FIT */
+            .gallery-grid-2x5 {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .gallery-item-5 img {
+                height: 160px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- STUB MODAL WINDOW FOR BOOKING -->
+    <div class="modal-overlay" id="reserveModal">
+        <div class="modal-card">
+            <h2 class="modal-title">Онлайн-Бронирование Столика</h2>
+            <p class="modal-text">
+                Система автоматической брони столов временно работает в режиме предзаписи! Зарезервировать столик на вечер можно по телефону администратора или прямо у барной стойки.
+            </p>
+            <button class="btn-modal-close" onclick="closeModal()">Понятно</button>
+        </div>
+    </div>
+
+    <!-- HEADER NAVIGATION -->
+    <header>
+        <a href="#hero" class="logo-link">
+            <img src="assets/restaurant/crisp_logo.png" class="logo-img" alt="Логотип Ресторана На Бульваре">
+        </a>
+        <nav>
+            <a href="#hero">Главная</a>
+            <a href="#about">О Нас</a>
+            <a href="#menu-overview">Обзор Меню</a>
+            <a href="#gallery">Галерея Блюд</a>
+        </nav>
+        <button class="btn-reserve-trigger" onclick="openModal()">Забронировать Стол</button>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="badge">Эстетика Домашнего Уюта на Бульваре</div>
+            <h1 class="hero-title">Вкус, за которым <strong>возвращаются</strong></h1>
+            <p class="hero-subtitle">
+                Мы создали место, где Мариуполь наполняется теплом, ароматом свежеприготовленных блюд и душевной атмосферой встреч с близкими.
+            </p>
+            
+            <div class="hero-buttons">
+                <button class="btn-reserve-trigger" onclick="openModal()">Забронировать Стол</button>
+                <a href="#menu-overview" class="btn-menu">Обзор Меню</a>
+            </div>
+        </div>
+
+        <!-- HERO RIGHT: STUB PLACEHOLDER FOR FACADE PHOTO -->
+        <div class="hero-visual">
+            <div class="stub-placeholder-card">
+                <div class="stub-label">[Памятка Фотографии]</div>
+                <h3 class="stub-title">Фасад Здания</h3>
+                <p class="stub-text">
+                    Здесь будет размещена красивая фотография фасада ресторана «На Бульваре» с улицы.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <h2 class="section-title">О Ресторане</h2>
+        <p class="section-desc">Настоящее гостеприимство начинается с душевной заботы и внимания к каждой детали</p>
+
+        <div class="about-card">
+            <!-- ПАМЯТКА О ВСЕХ СОТРУДНИКАХ РЕСТОРАНА СЛЕВА -->
+            <div class="stub-placeholder-card" style="height: 350px;">
+                <div class="stub-label">[Памятка Фотографии]</div>
+                <h3 class="stub-title">Все Сотрудники Ресторана</h3>
+                <p class="stub-text">
+                    Здесь будет размещена общая фотография всех сотрудников ресторана: шеф-поваров, официантов и администраторов.
+                </p>
+            </div>
+
+            <!-- ТЕКСТ СПРАВА -->
+            <div class="about-text">
+                <h3>Дом, где оживают лучшие традиции домашнего уюта</h3>
+                <p>
+                    Ресторан <strong>«На Бульваре»</strong> — это больше, чем просто гастрономия. Это особенная философия отдыха в Мариуполе, где каждый вечер превращается в маленькое семейное событие.
+                </p>
+                <p>
+                    Мы верим, что настоящая еда должна приносить не только сытость, но и чистые искренние эмоции. От аромата свежевыпеченного хлеба до мерцания камина — мы продумали все для вашего комфорта.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MENU OVERVIEW (4 CATEGORIES) -->
+    <section id="menu-overview">
+        <h2 class="section-title">Краткий Обзор Меню</h2>
+        <p class="section-desc">Нажмите на карточку категории, чтобы развернуть соответствующий блок меню с 3 уникальными фотографиями блюд и ценами ниже</p>
+
+        <div class="menu-overview-grid">
+
+            <!-- КАТЕГОРИЯ 1: МЯСО -->
+            <div class="menu-card-interactive" onclick="toggleMenuBlock('meat-menu-block')">
+                <div class="menu-card-img-wrap">
+                    <img src="assets/restaurant/stock_dish_1.jpg" alt="Мясные блюда">
+                </div>
+                <div class="menu-card-body-transparent">
+                    <h3>Авторские Мясные Блюда</h3>
+                    <p>Сочные стейки, запеченное мясо и мангал-меню с идеальной прожаркой.</p>
+                </div>
+            </div>
+
+            <!-- КАТЕГОРИЯ 2: ЗАКУСКИ -->
+            <div class="menu-card-interactive" onclick="toggleMenuBlock('salad-menu-block')">
+                <div class="menu-card-img-wrap">
+                    <img src="assets/restaurant/stock_dish_2.jpg" alt="Салаты">
+                </div>
+                <div class="menu-card-body-transparent">
+                    <h3>Свежие Салаты & Закуски</h3>
+                    <p>Легкие сочетания фермерских овощей, авторские соусы и гастрономические сеты.</p>
+                </div>
+            </div>
+
+            <!-- КАТЕГОРИЯ 3: ДЕСЕРТЫ -->
+            <div class="menu-card-interactive" onclick="toggleMenuBlock('dessert-menu-block')">
+                <div class="menu-card-img-wrap">
+                    <img src="assets/restaurant/stock_dish_3.jpg" alt="Десерты">
+                </div>
+                <div class="menu-card-body-transparent">
+                    <h3>Фирменные Десерты</h3>
+                    <p>Шоколадный фондан, десерт «Украденное счастье» и авторское мороженое.</p>
+                </div>
+            </div>
+
+            <!-- КАТЕГОРИЯ 4: НАПИТКИ -->
+            <div class="menu-card-interactive" onclick="toggleMenuBlock('drinks-menu-block')">
+                <div class="menu-card-img-wrap">
+                    <img src="assets/restaurant/stock_dish_4.jpg" alt="Напитки">
+                </div>
+                <div class="menu-card-body-transparent">
+                    <h3>Винная Карта & Напитки</h3>
+                    <p>Богатая коллекция благородных вин, авторские чаи и освежающие напитки.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 1. РАСКРЫВАЮЩИЙСЯ БЛОК: МЯСО -->
+        <div class="expandable-menu-block" id="meat-menu-block">
+            <div class="menu-block-header">
+                <h3>Авторские Мясные Блюда & Мангал</h3>
+                <button class="btn-close-block" onclick="hideMenuBlock('meat-menu-block')">Свернуть</button>
+            </div>
+
+            <div class="menu-block-photos-3">
+                <img src="assets/restaurant/stock_dish_5.jpg" alt="Мясо 1">
+                <img src="assets/restaurant/stock_dish_11.jpg" alt="Мясо 2">
+                <img src="assets/restaurant/stock_dish_12.jpg" alt="Мясо 3">
+            </div>
+
+            <div class="menu-list-grid">
+                <div>
+                    <div class="menu-item-line">
+                        <span class="menu-item-name">Стейк Рибай Прайм</span>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">2 400 ₽</span>
+                    </div>
+                    <div class="menu-item-subtext">Выдержанная говядина, розмарин, морская соль (350 г)</div>
+
+                    <div class="menu-item-line">
+                        <span class="menu-item-name">Стейк Филе-Миньон</span>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">1 900 ₽</span>
+                    </div>
+                    <div class="menu-item-subtext">Нежнейшая говяжья вырезка с гриль-овощами (250 г)</div>
+
+                    <div class="menu-item-line">
+                        <span class="menu-item-name">Бефстроганов из говядины</span>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">750 ₽</span>
+                    </div>
+                    <div class="menu-item-subtext">Подается с картофельным пюре и соусом (360 г)</div>
+                </div>
+
+                <div>
+                    <div class="menu-item-line">
+                        <span class="menu-item-name">Медальоны из говядины</span>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">1 100 ₽</span>
+                    </div>
+                    <div class="menu-item-subtext">Сливочно-перечный соус, травы (280 г)</div>
+
+                    <div class="menu-item-line">
+                        <span class="menu-item-name">Шашлык из свиной шеи</span>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">680 ₽</span>
+                    </div>
+                    <div class="menu-item-subtext">Обжаренный на березовых углях (300 г)</div>
+
+                    <div class="menu-item-line">
+                        <span class="menu-item-name">Руллада из куриного филе</span>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">620 ₽</span>
+                    </div>
+                    <div class="menu-item-subtext">С крем-сыром, ананасом и мятой (320 г)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. РАСКРЫВАЮЩИЙСЯ БЛОК: САЛАТЫ & ЗАКУСКИ -->
+        <div class="expandable-menu-block" id="salad-menu-block">
+            <div class="menu-block-header">
+                <h3>Свежие Салаты & Горячие Закуски</h3>
+                <button class="btn-close-block" onclick="hideMenuBlock('salad-menu-block')">Свернуть</button>
+            </div>
+
+            <div class="menu-block-photos-3">
+                <img src="assets/restaurant/stock_dish_6.jpg" alt="Салат 1">
+                <img src="assets/restaurant/stock_dish_14.jpg" alt="Салат 2">
+                <img src="assets/restaurant/stock_dish_15.jpg" alt="Салат 3">
+            </div>
+
+            <div class="menu-list-grid">
+                <div>
+                    <div class="menu-item-line">
+                        <span class="menu-item-name">Салат с Бурратой и инжиром</span>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">890 ₽</span>
+                    </div>
+                    <div class="menu-item-subtext">Вяленые томаты, прошутто, оливковое масло (280 г)</div>
+
+                    <div class="menu-item-line">
+                        <span class="menu-item-name">Цезарь с тигровыми креветками</span>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">780 ₽</span>
+                    </div>
+                    <div class="menu-item-subtext">Соус пармезан, гренки, сочные креветки (300 г)</div>
+
+                    <div class="menu-item-line">
+                        <span class="menu-item-name">Тёплый салат с телятиной</span>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">720 ₽</span>
+                    </div>
+                    <div class="menu-item-subtext">Грибы гриль, рукола, бальзамик (320 г)</div>
+                </div>
+
+                <div>
+                    <div class="menu-item-line">
+                        <span class="menu-item-name">Тартар из тунца с авокадо</span>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">850 ₽</span>
+                    </div>
+                    <div class="menu-item-subtext">Свежий тунец, заправка понзу (200 г)</div>
+
+                    <div class="menu-item-line">
+                        <span class="menu-item-name">Брускетты с ростбифом</span>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">580 ₽</span>
+                    </div>
+                    <div class="menu-item-subtext">3 шт. с вялеными черри и соусом (220 г)</div>
+
+                    <div class="menu-item-line">
+                        <span class="menu-item-name">Сырное плато</span>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">1 250 ₽</span>
+                    </div>
+                    <div class="menu-item-subtext">Благородные сыры, крафтовый мед, орехи (350 г)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. РАСКРЫВАЮЩИЙСЯ БЛОК: ДЕСЕРТЫ -->
+        <div class="expandable-menu-block" id="dessert-menu-block">
+            <div class="menu-block-header">
+                <h3>Фирменные Авторские Десерты</h3>
+                <button class="btn-close-block" onclick="hideMenuBlock('dessert-menu-block')">Свернуть</button>
+            </div>
+
+            <div class="menu-block-photos-3">
+                <img src="assets/restaurant/stock_dish_7.jpg" alt="Десерт 1">
+                <img src="assets/restaurant/stock_dish_16.jpg" alt="Десерт 2">
+                <img src="assets/restaurant/stock_dish_17.jpg" alt="Десерт 3">
+            </div>
+
+            <div class="menu-list-grid">
+                <div>
+                    <div class="menu-item-line">
+                        <span class="menu-item-name">Шоколадный Фондан</span>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">700 ₽</span>
+                    </div>
+                    <div class="menu-item-subtext">Тающий центр, шарик ванильного мороженого (180 г)</div>
+
+                    <div class="menu-item-line">
+                        <span class="menu-item-name">Десерт «Украденное Счастье»</span>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">650 ₽</span>
+                    </div>
+                    <div class="menu-item-subtext">Фирменный секретный рецепт шеф-кондитера (220 г)</div>
+
+                    <div class="menu-item-line">
+                        <span class="menu-item-name">Фисташковый Рулет</span>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">590 ₽</span>
+                    </div>
+                    <div class="menu-item-subtext">Свежая малина, легкий крем (200 г)</div>
+                </div>
+
+                <div>
+                    <div class="menu-item-line">
+                        <span class="menu-item-name">Чизкейк Сан-Себастьян</span>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">550 ₽</span>
+                    </div>
+                    <div class="menu-item-subtext">Запеченный испанский чизкейк (210 г)</div>
+
+                    <div class="menu-item-line">
+                        <span class="menu-item-name">Яблочный Штрудель</span>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">480 ₽</span>
+                    </div>
+                    <div class="menu-item-subtext">Корица, грецкий орех, мороженое (250 г)</div>
+
+                    <div class="menu-item-line">
+                        <span class="menu-item-name">Мороженое с лесной ягодой</span>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">400 ₽</span>
+                    </div>
+                    <div class="menu-item-subtext">3 шарика на выбор (150 г)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. РАСКРЫВАЮЩИЙСЯ БЛОК: ВИННАЯ КАРТА & НАПИТКИ -->
+        <div class="expandable-menu-block" id="drinks-menu-block">
+            <div class="menu-block-header">
+                <h3>Винная Карта & Коктейли</h3>
+                <button class="btn-close-block" onclick="hideMenuBlock('drinks-menu-block')">Свернуть</button>
+            </div>
+
+            <div class="menu-block-photos-3">
+                <img src="assets/restaurant/stock_dish_8.jpg" alt="Напитки 1">
+                <img src="assets/restaurant/stock_dish_20.jpg" alt="Напитки 2">
+                <img src="assets/restaurant/stock_dish_21.jpg" alt="Напитки 3">
+            </div>
+
+            <div class="menu-list-grid">
+                <div>
+                    <h4 style="color: var(--accent-gold); margin-bottom: 15px;">Винная Карта (6 Позиций)</h4>
+                    
+                    <div class="menu-item-line">
+                        <span class="menu-item-name">Пино Нуар Красное Сухое (Франция)</span>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">3 800 ₽</span>
+                    </div>
+
+                    <div class="menu-item-line">
+                        <span class="menu-item-name">Шабли Блан Белое Сухое (Франция)</span>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">4 200 ₽</span>
+                    </div>
+
+                    <div class="menu-item-line">
+                        <span class="menu-item-name">Кьянти Классико Резерва (Италия)</span>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">3 500 ₽</span>
+                    </div>
+
+                    <div class="menu-item-line">
+                        <span class="menu-item-name">Совиньон Блан (Новая Зеландия)</span>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">2 900 ₽</span>
+                    </div>
+
+                    <div class="menu-item-line">
+                        <span class="menu-item-name">Мальбек Валле де Уко (Аргентина)</span>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">3 100 ₽</span>
+                    </div>
+
+                    <div class="menu-item-line">
+                        <span class="menu-item-name">Игристое Просекко Брют (Италия)</span>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">2 600 ₽</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 style="color: var(--accent-gold); margin-bottom: 15px;">Коктейли & Чаи</h4>
+                    
+                    <div class="menu-item-line">
+                        <span class="menu-item-name">Коктейль «Ночь на Бульваре»</span>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">650 ₽</span>
+                    </div>
+
+                    <div class="menu-item-line">
+                        <span class="menu-item-name">Негрони Классико</span>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">580 ₽</span>
+                    </div>
+
+                    <div class="menu-item-line">
+                        <span class="menu-item-name">Апероль Спритц</span>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">550 ₽</span>
+                    </div>
+
+                    <div class="menu-item-line">
+                        <span class="menu-item-name">Лимонад «Маракуйя & Мята»</span>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">380 ₽</span>
+                    </div>
+
+                    <div class="menu-item-line">
+                        <span class="menu-item-name">Молочный Улун (Чайник 800 мл)</span>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">450 ₽</span>
+                    </div>
+
+                    <div class="menu-item-line">
+                        <span class="menu-item-name">Облепиховый Чай с медом (800 мл)</span>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">550 ₽</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section id="gallery">
+        <h2 class="section-title">Галерея Блюд</h2>
+        <p class="section-desc">Каждое наше блюдо как произведение искусства</p>
+
+        <div class="gallery-grid-2x5">
+            <!-- РЯД 1 (5 ШТУК) -->
+            <div class="gallery-item-5">
+                <img src="assets/restaurant/stock_dish_9.jpg" alt="Тартар">
+            </div>
+            <div class="gallery-item-5">
+                <img src="assets/restaurant/stock_dish_10.jpg" alt="Чизкейк">
+            </div>
+            <div class="gallery-item-5">
+                <img src="assets/restaurant/stock_dish_13.jpg" alt="Стейк на доске">
+            </div>
+            <div class="gallery-item-5">
+                <img src="assets/restaurant/stock_dish_18.jpg" alt="Запеченная Паста">
+            </div>
+            <div class="gallery-item-5">
+                <img src="assets/restaurant/stock_dish_19.jpg" alt="Панкейки">
+            </div>
+
+            <!-- РЯД 2 (5 ШТУК) -->
+            <div class="gallery-item-5">
+                <img src="assets/restaurant/stock_dish_22.jpg" alt="Фрут Десерт">
+            </div>
+            <div class="gallery-item-5">
+                <img src="assets/restaurant/stock_dish_23.jpg" alt="Брускетта">
+            </div>
+            <div class="gallery-item-5">
+                <img src="assets/restaurant/stock_dish_24.jpg" alt="Пицца Пирог">
+            </div>
+            <div class="gallery-item-5">
+                <img src="assets/restaurant/stock_dish_25.jpg" alt="Банкетный Сет">
+            </div>
+            <div class="gallery-item-5">
+                <img src="assets/restaurant/stock_dish_26.jpg" alt="Кофе и Круассан">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Ресторан «На Бульваре» (Мариуполь). Эстетика домашнего уюта и авторской кухни.</p>
+    </footer>
+
+    <script>
+        function openModal() {
+            document.getElementById('reserveModal').style.display = 'flex';
+        }
+        function closeModal() {
+            document.getElementById('reserveModal').style.display = 'none';
+        }
+
+        /* TOGGLE EXPANDABLE MENU BLOCKS */
+        function toggleMenuBlock(blockId) {
+            var allBlocks = document.querySelectorAll('.expandable-menu-block');
+            allBlocks.forEach(function(b) {
+                if (b.id !== blockId) {
+                    b.style.display = 'none';
+                }
+            });
+
+            var target = document.getElementById(blockId);
+            if (target.style.display === 'block') {
+                target.style.display = 'none';
+            } else {
+                target.style.display = 'block';
+                target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        }
+
+        function hideMenuBlock(blockId) {
+            document.getElementById(blockId).style.display = 'none';
+        }
+    </script>
+</body>
+</html>
