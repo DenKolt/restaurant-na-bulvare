@@ -25,23 +25,36 @@
 
         body {
             font-family: 'Outfit', sans-serif;
-            background: #090707 url("C:\\Users\\Denver\\.gemini\\antigravity\\brain\\2c118987-a44d-4f52-8ec9-4e641ab59f9d\\assets/restaurant/restaurant_fireplace_bg.jpg") center/cover fixed no-repeat;
+            background-color: #090707;
             color: var(--text-main);
             line-height: 1.7;
             overflow-x: hidden;
             position: relative;
         }
 
-        body::before {
-            content: '';
+        /* GUARANTEED CROSS-PLATFORM FIREPLACE BACKGROUND */
+        .bg-fixed-layer {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(8, 6, 6, 0.74);
-            backdrop-filter: blur(8px);
+            width: 100vw;
+            height: 100vh;
+            background: #090707 url("assets/restaurant/restaurant_fireplace_bg.jpg") center/cover no-repeat;
+            z-index: -2;
+            pointer-events: none;
+        }
+
+        .bg-overlay-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(8, 6, 6, 0.72);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
             z-index: -1;
+            pointer-events: none;
         }
 
         /* HEADER / NAVBAR */
@@ -526,9 +539,7 @@
             background: rgba(9, 7, 7, 0.95);
         }
 
-        /* ====================================================
-           📱 MOBILE RESPONSIVE MEDIA QUERIES (TABLETS & PHONES)
-           ==================================================== */
+        /* 📱 MOBILE RESPONSIVE MEDIA QUERIES */
         @media (max-width: 992px) {
             header {
                 padding: 15px 4% 15px 100px;
@@ -697,7 +708,6 @@
                 font-size: 17px;
             }
 
-            /* GALLERY ON PHONES: 2 COLUMNS X 5 ROWS PERFECT FIT */
             .gallery-grid-2x5 {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 12px;
@@ -710,6 +720,10 @@
     </style>
 </head>
 <body>
+
+    <!-- GUARANTEED CROSS-PLATFORM FIREPLACE BACKGROUND & BLUR OVERLAY -->
+    <div class="bg-fixed-layer"></div>
+    <div class="bg-overlay-layer"></div>
 
     <!-- STUB MODAL WINDOW FOR BOOKING -->
     <div class="modal-overlay" id="reserveModal">
@@ -1182,7 +1196,6 @@
             document.getElementById('reserveModal').style.display = 'none';
         }
 
-        /* TOGGLE EXPANDABLE MENU BLOCKS */
         function toggleMenuBlock(blockId) {
             var allBlocks = document.querySelectorAll('.expandable-menu-block');
             allBlocks.forEach(function(b) {
